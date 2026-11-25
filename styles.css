@@ -1,0 +1,163 @@
+:root {
+  color-scheme: dark;
+  --background: #111310;
+  --panel: #1d211b;
+  --text: #f5f7ef;
+  --muted: #c2c8bb;
+  --lime: #ccff2e;
+  --border: #383e34;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 1rem/1.65 system-ui, sans-serif;
+}
+
+a {
+  color: var(--lime);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1;
+  padding: 0.5rem 1rem;
+  background: var(--background);
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 1.25rem max(1.25rem, calc((100% - 64rem) / 2));
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  font-weight: 750;
+  font-size: 1.5rem;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  border-radius: 0.75rem;
+}
+
+nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+nav a {
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: var(--panel);
+}
+
+nav a[aria-current="page"] {
+  background: var(--lime);
+  color: var(--background);
+}
+
+main {
+  width: min(100%, 51rem);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 7vw, 5rem) 1.25rem 4rem;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 7vw, 3.625rem);
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.intro, .updated {
+  color: var(--muted);
+}
+
+.intro {
+  font-size: 1.15rem;
+}
+
+.contact {
+  margin-block: 2rem;
+  padding: clamp(1.25rem, 5vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--panel);
+}
+
+.contact h2 {
+  margin-top: 0;
+}
+
+.contact p:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  padding: 1.65rem max(1.25rem, calc((100% - 48.5rem) / 2));
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0 0 0.25rem;
+}
